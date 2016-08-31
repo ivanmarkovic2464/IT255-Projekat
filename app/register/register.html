@@ -1,0 +1,151 @@
+<style>
+
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title {
+	font-size: 50px;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+	width: 225px;
+	
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px 40px 40px;
+}
+
+
+</style>
+	<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center" style="padding-left: 50px;">
+	               		<h1 class="title">Registracija</h1>
+	               	</div>
+                  <div class="alert alert-danger" style="display: none;">
+
+                  </div>
+	            </div>
+				<div class="main-login main-center" >
+					<form role="form" [ngFormModel]="registerForm" style="padding-left: 30px;" class="form-horizontal" method="post" >
+
+						<div class="form-group">
+							<label for="firstName" class="cols-sm-2 control-label">Ime</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-th" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" ngControl='firstName'  placeholder="Unesi svoje ime"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="lastName" class="cols-sm-2 control-label">Prezime</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-th" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" ngControl='lastName'  placeholder="Unesi svoje prezime"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Username</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" ngControl='username'  placeholder="Unesi korisničko ime"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" ngControl='password'  placeholder="Unesi lozinku"/>
+								</div>
+							</div>
+						</div>
+
+            <div class="form-group">
+              <label for="adresa" class="cols-sm-2 control-label">Grad</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" ngControl='adresa'  placeholder="Unesi svoj grad"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="ulica" class="cols-sm-2 control-label">Ulica</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-road" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" ngControl='ulica'  placeholder="Unesi ulicu i broj"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="telefon" class="cols-sm-2 control-label">Telefon</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" ngControl='telefon'  placeholder="Unesi svoj broj telefona"/>
+                </div>
+              </div>
+            </div>
+			<br>
+							<button (click)="onRegister()" style="width: 200px;" class="btn btn-primary">Registruj se</button>
+
+
+					</form>
+				</div>
+				</div>
+				</div>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>

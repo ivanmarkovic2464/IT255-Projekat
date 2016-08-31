@@ -1,0 +1,50 @@
+<div class="container main">
+<h1 style="text-align:center;"> Postovani </h1>
+
+<form role="form" [ngFormModel]="userForm">
+  <div class="form-group">
+     <input type="text" style=" text-align: center; height: 50px; font-size: 30px; border: 0px #fff; background-color: #fff;" class="form-control" ngControl='username' disabled>
+   </div>
+   </form>
+   <form role="form" [ngFormModel]="narucivanjeForm">
+   
+   <p style="text-align:center;"> <strong> Narucite deo klikom na dugme ispod informacija o delu </strong> </p>
+   <br>
+ <div class="form-group">
+    <label for="proizvodi_ID">ID proizvoda:</label>
+    <input type="text" class="form-control" ngControl='proizvodi_ID' disabled>
+  </div>
+  <div class="form-group">
+    <label for="NAZIV">Naziv:</label>
+    <input type="text" class="form-control" ngControl='NAZIV' disabled>
+  </div>
+   <div class="form-group">
+    <label for="model">Model:</label>
+    <input type="text" class="form-control"  ngControl='model' disabled>
+  </div>
+  <div class="form-group">
+    <label for="cena">Cena:</label>
+    <input type="text" class="form-control" ngControl='cena' disabled>
+  </div>
+  <div class="form-group">
+    <label for="garancija">Garancija:</label>
+    <input type="text" class="form-control" ngControl='garancija' disabled>
+  </div>
+  <div class="form-group">
+    <label for="boja">Boja:</label>
+    <input type="text" class="form-control" ngControl='boja' disabled>
+  </div>
+  <div class="form-group">
+    <label for="tezina">Tezina:</label>
+    <input type="text" class="form-control" ngControl='tezina' disabled>
+  </div>
+  <div class="form-group">
+    <label for="proizvodjac">Proizvodjac:</label>
+    <input type="text" class="form-control" ngControl='proizvodjac' disabled>
+  </div>
+  <br>
+  <div class="text-center">
+<button (click)="send()" style="font-size: 25px; align: center; width: 250px;" class="btn btn-primary">Naruci</button>
+  </div>
+</form>
+</div>

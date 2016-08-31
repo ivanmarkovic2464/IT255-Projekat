@@ -1,0 +1,68 @@
+<style>
+.jumbotron {
+	margin-top:80px;
+    position: relative;
+    background: #000 url("img/proizvodi.jpg") center center;
+	border: 1px solid #c4c4c4;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    overflow: hidden;
+}
+</style>
+
+<div class="container">
+<div class="row text-center" style="margin-top:90px;">
+	<div class="row">
+		<div class="col-md-4 img-center"><img src="img/laptop.jpg"></div>
+		<div class="col-md-4 img-center"><img src="img/computer.jpg"></div>
+		<div class="col-md-4 img-center"><img src="img/camera.png"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 img-center"><img src="img/headphones.jpg"></div>
+		<div class="col-md-4 img-center">
+		<br><br><br>
+		<p class="text-center"style="font-size:50px; color:#000;">Naši proizvodi</p>
+		</div>
+		<div class="col-md-4 img-center"><img src="img/speakers.jpg"></div>
+	</div>
+</div>
+
+<div class="col-lg-12">
+	<table  class="display" cellspacing="0" >
+	    <thead>
+            <tr>
+
+                <th>Tip: </th>
+                <th>Model: </th>
+				<th>Garancija: </th>
+				<th>Cena: </th>
+                <th>Proizvodjac: </th>
+                <th></th>
+				 <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="#proizvod of servisi">
+
+                <td>{{proizvod.TIP_NAZIV}}</td>
+                <td>{{proizvod.model}}</td>
+				<td>{{proizvod.garancija}}</td>
+				<td>{{proizvod.cena}}</td>
+				<td>{{proizvod.proizvodjac}}</td>
+				 <td class="text-center">
+                  <button class="btn btn-danger" title="remove" (click)="removeProizvod(proizvod.proizvodi_ID)">Obrisi
+                      <span class="glyphicon glyphicon-remove"></span>
+                   </button>
+                </td>
+				 <td class="text-center">
+
+				     <button type="button" class="btn btn-primary" title ="addCart" (click)="detalji(proizvod)">Detaljnije
+					 <span class="glyphicon glyphicon-info-sign"></span></button>
+					 </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

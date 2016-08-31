@@ -1,0 +1,81 @@
+<style>
+h1.title {
+	font-size: 50px;
+	font-weight: 400;
+}
+hr{
+	width: 10%;
+	color: #fff;
+}
+.form-group{
+	width:250px;
+	margin-bottom: 15px;
+}
+label{
+	margin-bottom: 15px;
+}
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+.main-login{
+ 	background-color: #fff;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+}
+</style>
+		<div class="row main" style="height:100%;">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title ">Prijavljivanje</h1>
+	               	</div>
+                  <div class="alert alert-danger" style="display: none;">
+
+                  </div>
+	            </div>
+				<div class="main-login main-center">
+					<form role="form" [ngFormModel]="loginForm" style="padding-left: 20px;" class="form-horizontal" method="post" >
+
+
+						<div class="form-group">
+							<label for="username" class="cols-md-2 control-label">Username</label>
+							<div class="cols-md-3">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" ngControl='username' [(ngModel)]='name' placeholder="Unesi korisnicko ime"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-md-2 control-label">Password</label>
+							<div class="cols-md-3">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" ngControl='password'  placeholder="Unesi lozinku"/>
+								</div>
+							</div>
+						</div>
+				<div class="form-group">
+					<div class="col-md-10">
+						<div class="checkbox">
+							<label><input type="checkbox" ngControl='checkbox'>Administrator?</label>
+						</div>
+					</div>
+				</div>
+
+							<button (click)="onLogin()" style="width: 225px;" class="btn btn-primary">Prijavi se</button>
+					</form>
+				</div>
+		</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Racunarska oprema</title>
+   
+</head>
+<header class="header">
+  <div class="container">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+       <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span> 
+		<span class="icon-bar"></span> 
+		<span class="icon-bar"></span>
+	   </button>
+        <a [routerLink]="['./MainPage']" class="navbar-brand scroll-top logo animated bounceInLeft"><b><i>Računarska oprema</i></b></a> 
+      </div>
+      <div id="main-nav" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left animated bounceInLeft" id="mainNav">
+          <li [class.active]="router.isRouteActive(router.generate(['/MainPage']))">
+			<a [routerLink]="['./MainPage']">Pocetna</a>
+			</li>
+          <li [class.active]="router.isRouteActive(router.generate(['/AboutUsPage']))">
+			<a [routerLink]="['./AboutUsPage']">O Nama</a>
+			</li>
+			<li *ngIf="isAuth2 == 'yes' &&  isAuth == 'no' " [class.active]="router.isRouteActive(router.generate(['/ProizvodiAdminPage']))">
+			<a [routerLink]="['./ProizvodiAdminPage']">Proizvodi</a>
+			<li *ngIf="isAuth2 == 'no' &&  isAuth == 'yes' " [class.active]="router.isRouteActive(router.generate(['/ProizvodiPage']))">
+			<a [routerLink]="['./ProizvodiPage']">Proizvodi</a>
+			</li>
+			<li *ngIf="isAuth2 == 'yes' && isAuth== 'no' " [class.active]="router.isRouteActive(router.generate(['/KorisniciPage']))">
+			<a [routerLink]="['./KorisniciPage']">Korisnici</a>
+			</li>
+			<li *ngIf="isAuth2 == 'yes' && isAuth== 'no' " [class.active]="router.isRouteActive(router.generate(['/KorpePage']))">
+			<a [routerLink]="['./KorpePage']">Korpe</a>
+			</li>
+			<li *ngIf="isAuth2 == 'yes' && isAuth== 'no' " [class.active]="router.isRouteActive(router.generate(['/DodajPage']))">
+			<a [routerLink]="['./DodajPage']">Dodaj proizvod</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right animated bounceInRight" id="mainNav">
+		  <li *ngIf="isAuth2 == 'no' && isAuth == 'no'" [class.active]="router.isRouteActive(router.generate(['/LoginPage']))">
+			<a [routerLink]="['./LoginPage']">Login</a>
+			</li>
+			<li *ngIf="isAuth2 == 'no' && isAuth == 'no'" [class.active]="router.isRouteActive(router.generate(['/RegisterPage']))">
+			<a [routerLink]="['./RegisterPage']">Register</a>
+			</li>
+			<li *ngIf="isAuth2 == 'yes' || isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/RegisterPage']))">
+			<a (click)="onLogout()">Odjava</a>
+			</li>
+			
+		</ul>
+      </div>
+    </nav>
+  </div>
+  </header>
+  
+
+
+	
+<router-outlet></router-outlet>
+
+<br><br><br><br>
+
+<footer>
+<section class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center"> Copyright 2016 <a href="#">Ivan Marković</a> </div>
+    </div>
+    
+  </div>
+</section>
+</footer>

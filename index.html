@@ -1,0 +1,62 @@
+<html>
+   <head>
+    <title>Racunarska oprema</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+	<!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet" media="screen">
+    <link href="css/styles.css" rel="stylesheet">
+	<link href="font/css/font-awesome.css" rel="stylesheet">
+	<link href="font/css/font-awesome.min.css" rel="stylesheet">
+	<link href="fonts/fontawesome-webfont.ttf" rel="stylesheet">
+	<link href="fonts/fontawesome-webfont.woff" rel="stylesheet">
+	<link href="fonts/glyphicons-halflings-regular.tff" rel="stylesheet">
+	<link href="fonts/glyphicons-halflings-regular.woff" rel="stylesheet">
+	<link href="fonts/glyphicons-halflings-regular.woff2" rel="stylesheet">
+	
+	
+      <!-- 1. Ucitavamo biblioteke -->
+ <!-- IE required polyfills, in this exact order -->
+ <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+ <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+ <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+ <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+ <script src="node_modules/systemjs/dist/system.src.js"></script>
+ <script src="node_modules/rxjs/bundles/Rx.js"></script>
+ <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+ <!-- Dodajemo http biblioteku -->
+ <script src="node_modules/angular2/bundles/http.dev.js"></script>
+ <!-- Dodajemo router biblioteku -->
+ <script src="node_modules/angular2/bundles/router.dev.js"></script>
+  <!-- Bootstrap tema -->
+  
+ <!-- Poslednji minifikovani JavaScript -->
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-
+laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8"
+src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+      <!-- 2. Konfigurisemo SystemJS -->
+      <script>
+         System.config({
+           packages: {        
+             app: {
+               format: 'register',
+               defaultExtension: 'js'
+             }
+           }
+         });
+         System.import('app/main')
+               .then(null, console.error.bind(console));
+      </script>
+   </head>
+   <!-- 3. Prikazujemo aplikaciju -->
+   <body>
+         <moja-aplikacija>Loading...</moja-aplikacija>
+   </body>
+</html>

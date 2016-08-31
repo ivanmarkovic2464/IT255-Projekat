@@ -1,0 +1,52 @@
+<div class="container main">
+<h1 style="text-align:center;"> Postovani </h1>
+
+<form role="form" [ngFormModel]="adminForm">
+  <div class="form-group">
+     <input type="text" style=" text-align: center; height: 50px; font-size: 30px; border: 0px #fff; background-color: #fff;" class="form-control" ngControl='username' disabled>
+   </div>
+   </form>
+   <form role="form" [ngFormModel]="narucivanjeForm">
+   
+   <p style="text-align:center;"> <strong> Unesite potrebne izmene i kliknite na dugme "Izmeni" </strong> </p>
+   <br>
+ <div class="form-group">
+    <label for="proizvodi_ID">ID proizvoda:</label>
+    <input type="text" class="form-control" ngControl='proizvodi_ID' disabled>
+  </div>
+  <div class="form-group">
+    <label for="tip">Tip proizvoda:</label>
+	<select #selectOption (change)='select=selectOption.value' class="form-control" ng-selected="Yes" >
+		 <option *ngFor="#tip of tipovi" [value]="tip.ID">{{tip.NAZIV}} </option>
+	</select>
+  </div>
+   <div class="form-group">
+    <label for="model">Model:</label>
+    <input type="text" class="form-control"  ngControl='model' >
+  </div>
+  <div class="form-group">
+    <label for="cena">Cena:</label>
+    <input type="text" class="form-control" ngControl='cena' >
+  </div>
+  <div class="form-group">
+    <label for="garancija">Garancija:</label>
+    <input type="text" class="form-control" ngControl='garancija' >
+  </div>
+  <div class="form-group">
+    <label for="boja">Boja:</label>
+    <input type="text" class="form-control" ngControl='boja' >
+  </div>
+  <div class="form-group">
+    <label for="tezina">Tezina:</label>
+    <input type="text" class="form-control" ngControl='tezina' >
+  </div>
+  <div class="form-group">
+    <label for="proizvodjac">Proizvodjac:</label>
+    <input type="text" class="form-control" ngControl='proizvodjac' >
+  </div>
+  <br>
+  <div class="text-center">
+<button (click)="izmeni()" style="font-size: 25px; align: center; width: 250px;" class="btn btn-primary">Izmeni</button>
+  </div>
+</form>
+</div>
